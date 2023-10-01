@@ -16,5 +16,5 @@ public class NfaAutomata {
     AutomataState getEnd() {
         return this.end;
     }
-    
+
 }
