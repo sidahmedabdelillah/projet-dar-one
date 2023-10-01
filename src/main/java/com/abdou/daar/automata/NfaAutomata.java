@@ -16,15 +16,5 @@ public class NfaAutomata {
     AutomataState getEnd() {
         return this.end;
     }
-
-    public String toString() {
-        StringBuilder json = new StringBuilder("{");
-        json.append("\"start\":");
-        json.append(this.start.toString());
-        json.append(",\"end\":");
-        json.append(this.end.toString());
-        json.append("}");
-        return json.toString();
-    }
-
+    
 }

@@ -13,14 +13,6 @@ public class AutomataTransition{
         this.isFinal = isFinal;
     }
 
-    public String toString(){
-        return "{" + "\"to\": " +
-                this.to +
-                " ,\"isFinal\":" +
-                this.isFinal +
-                "}";
-    }
-
     public AutomataState getToNode() {
         return to;
     }
