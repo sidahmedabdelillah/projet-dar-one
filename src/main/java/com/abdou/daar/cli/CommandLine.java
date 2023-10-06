@@ -14951,7 +14951,6 @@ public class CommandLine {
             }
         }
         char[] readUserInputWithEchoing(String prompt) {
-            System.out.print(prompt);
             InputStreamReader isr = new InputStreamReader(System.in);
             BufferedReader in = new BufferedReader(isr);
             try {

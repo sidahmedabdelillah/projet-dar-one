@@ -24,7 +24,6 @@ public class DotExcuter {
 
         // Generate the image using the dot command
         ProcessBuilder processBuilder = new ProcessBuilder("dot", "-Tpng", tempFilePath.toString(), "-o", fileName);
-        System.out.println(processBuilder.command());
         Process process = processBuilder.start();
 
         process.waitFor();

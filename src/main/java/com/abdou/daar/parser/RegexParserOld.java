@@ -24,7 +24,6 @@ public class RegexParserOld {
 
     //FROM REGEX TO SYNTAX TREE
     public static RegexTree parse(String regEx) throws Exception {
-        System.out.println("Calling parse with string argument " + regEx);
         //BEGIN DEBUG: set conditionnal to true for debug example
         if (false) throw new Exception();
         RegexTree example = exampleAhoUllman();
