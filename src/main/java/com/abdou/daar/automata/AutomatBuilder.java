@@ -60,9 +60,17 @@ public class AutomatBuilder {
         AutomataState start = new AutomataState(false);
         AutomataState end = new AutomataState(true);
 
+        //addEpsilonTransition(start, nfa.start);
         start.addEpsilonTransition(new AutomataTransition(nfa.getStart()));
-        nfa.getEnd().addEpsilonTransition(new AutomataTransition(nfa.getEnd()));
+
+        //addEpsilonTransition(nfa.end, end);
+        nfa.getEnd().addEpsilonTransition(new AutomataTransition(end));
+
+        //addEpsilonTransition(nfa.end, nfa.start);
         nfa.getEnd().addEpsilonTransition(new AutomataTransition(nfa.getStart()));
+
+        //nfa.end.isEnd = false;
+
 
         nfa.getEnd().setIsFinal(false);
 
@@ -96,7 +104,8 @@ public class AutomatBuilder {
         if (tree.isTerm()) {
             NfaAutomata factor = automatafromRegexTree(tree.getFirstChild());
             if (tree.getChildrenSize() == 2) {
-                return nfaAutomataConcat(factor, automatafromRegexTree(tree.getNthChild(1)));
+                var con = nfaAutomataConcat(factor, automatafromRegexTree(tree.getNthChild(1)));
+                return con;
             }
             return factor;
         }
@@ -128,7 +137,6 @@ public class AutomatBuilder {
             if (tree.getChildrenSize() == 2) {
                 return nfaAutomatafromSymbol(tree.getNthChild(1).getValue());
             }
-
             return nfaAutomatafromSymbol(tree.getFirstChild().getValue());
         }
 

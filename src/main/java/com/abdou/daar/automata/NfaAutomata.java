@@ -9,7 +9,7 @@ public class NfaAutomata {
         this.end = end;
     }
 
-    AutomataState getStart() {
+    public AutomataState getStart() {
         return this.start;
     }
 
